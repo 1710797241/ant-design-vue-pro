@@ -11,11 +11,7 @@ export default {
 
       localLoading: false,
       localDataSource: [],
-      localPagination: Object.assign({}, this.pagination),
-
-      // 存储表格onchange时的filters， sorter对象
-      filters: {},
-      sorter: {}
+      localPagination: Object.assign({}, this.pagination)
     }
   },
   props: Object.assign({}, T.props, {
@@ -139,10 +135,7 @@ export default {
      * @param {Object} filters 过滤条件
      * @param {Object} sorter 排序条件
      */
-    loadData (pagination, filters = this.filters, sorter = this.sorter) {
-      this.filters = filters
-      this.sorter = sorter
-
+    loadData (pagination, filters, sorter) {
       this.localLoading = true
       const parameter = Object.assign({
         pageNo: (pagination && pagination.current) ||
@@ -188,8 +181,6 @@ export default {
             this.localPagination = false
           }
           this.localDataSource = r.data // 返回结果中的数组数据
-        })
-        .finally(() => {
           this.localLoading = false
         })
       }

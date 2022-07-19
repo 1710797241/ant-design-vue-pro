@@ -2,8 +2,7 @@
 
 html,
 body,
-#app,
-#root {
+#app, #root {
   height: 100%;
 }
 
@@ -21,9 +20,9 @@ canvas {
 }
 
 body {
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizelegibility;
 }
 
 ul,
@@ -45,11 +44,12 @@ ol {
 }
 // 数据列表 搜索条件
 .table-page-search-wrapper {
+
   .ant-form-inline {
     .ant-form-item {
       display: flex;
-      margin-right: 0;
       margin-bottom: 24px;
+      margin-right: 0;
 
       .ant-form-item-control-wrapper {
         flex: 1 1;
@@ -58,11 +58,10 @@ ol {
       }
 
       > .ant-form-item-label {
-        width: auto;
-        padding-right: 8px;
         line-height: 32px;
+        padding-right: 8px;
+        width: auto;
       }
-
       .ant-form-item-control {
         height: 32px;
         line-height: 32px;
@@ -81,13 +80,11 @@ ol {
   .ant-table {
     width: 100%;
     overflow-x: auto;
-
     &-thead > tr,
     &-tbody > tr {
       > th,
       > td {
         white-space: pre;
-
         > span {
           display: block;
         }

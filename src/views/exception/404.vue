@@ -13,7 +13,7 @@ export default {
   name: 'Exception404',
   methods: {
     toHome () {
-      this.$router.push({ path: '/list' })
+      this.$router.push({ path: '/' })
     }
   }
 }
